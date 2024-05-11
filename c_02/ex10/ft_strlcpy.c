@@ -6,41 +6,48 @@
 /*   By: mwiacek <mwiacek@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 17:12:51 by mwiacek           #+#    #+#             */
-/*   Updated: 2024/01/20 19:17:11 by mwiacek          ###   ########.fr       */
+/*   Updated: 2024/05/11 21:14:51 by mwiacek          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
+int	ft_strlen(const char *str)
 {
 	int	i;
 
 	i = 0;
-	while (src[i] && i < size - 1)
-	{
-		dest[i] = src[i];
+	while (str[i])
 		i++;
-	}
-	dest[i] = '\0';
-	while (src[i] != '\0')
-	{
-		i++;
-	}
 	return (i);
 }
 
-/*
-int main()
+unsigned int	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	char destination[10];
-	char *source = "This is a long string";
+	int	i;
 
-	unsigned int result = ft_strlcpy(destination, source, 10);
-
-	printf("Copied string: %s\n", destination);
-	printf("Length of source string: %u\n", result);
-
-	return 0;
+	i = 0;
+	if (size < 1)
+		return (ft_strlen(src));
+	while (src[i] != '\0' && size > 1)
+	{
+		dst[i] = src[i];
+		i++;
+		size--;
+	}
+	dst[i] = '\0';
+	return (ft_strlen(src));
 }
-*/
+
+//int main()
+//{
+//	char destination[40];
+//	char *source = "This is a long string";
+//
+//	unsigned int result = ft_strlcpy(destination, source, 40);
+//
+//	printf("Copied string: %s\n", destination);
+//	printf("Length of source string: %u\n", result);
+//
+//	return 0;
+//}
