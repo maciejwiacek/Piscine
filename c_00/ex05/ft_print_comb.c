@@ -6,7 +6,7 @@
 /*   By: mwiacek <mwiacek@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 14:31:46 by mwiacek           #+#    #+#             */
-/*   Updated: 2024/01/18 17:43:22 by mwiacek          ###   ########.fr       */
+/*   Updated: 2024/05/11 21:04:12 by mwiacek          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,15 +23,15 @@ void	ft_print_numbers(char a, char b, char c)
 	}
 }
 
-int	ft_print_comb(void)
+void	ft_print_comb(void)
 {
 	char	a;
 	char	b;
 	char	c;
 
 	a = '0';
-	b = '0';
-	c = '0';
+	b = '1';
+	c = '2';
 	while (a <= '7')
 	{
 		while (b <= '8')
@@ -39,9 +39,7 @@ int	ft_print_comb(void)
 			while (c <= '9')
 			{
 				if (a != b && a != c && b != c)
-				{
 					ft_print_numbers(a, b, c);
-				}
 				c++;
 			}
 			c = b + 1;
@@ -52,8 +50,6 @@ int	ft_print_comb(void)
 	}
 }
 
-/*
-int main() {
-	ft_print_comb();
-}
-*/
+//int main() {
+//	ft_print_comb();
+//}

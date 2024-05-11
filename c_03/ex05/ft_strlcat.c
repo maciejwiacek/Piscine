@@ -6,13 +6,13 @@
 /*   By: mwiacek <mwiacek@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 14:06:07 by mwiacek           #+#    #+#             */
-/*   Updated: 2024/01/21 18:42:10 by mwiacek          ###   ########.fr       */
+/*   Updated: 2024/05/11 21:16:53 by mwiacek          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-unsigned int	ft_strlen(char *str)
+unsigned int	ft_strlen(const char *str)
 {
 	unsigned int	i;
 
@@ -24,38 +24,42 @@ unsigned int	ft_strlen(char *str)
 	return (i);
 }
 
-unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
+unsigned int	ft_strlcat(char *dst, const char *src, unsigned int size)
 {
-	unsigned int	d_size;
-	unsigned int	s_size;
-	unsigned int	offset;
+	unsigned int	dst_len;
+	unsigned int	total_len;
 	unsigned int	i;
+	unsigned int	j;
 
-	d_size = ft_strlen(dest);
-	s_size = ft_strlen(src);
-	offset = d_size;
-	i = 0;
-	while (src[i] != '\0')
+	dst_len = 0;
+	if (!dst && !src)
+		return (0);
+	if (size == 0)
+		return (ft_strlen(src));
+	while (dst[dst_len] != '\0' && dst_len < size)
+		dst_len++;
+	total_len = dst_len + ft_strlen(src);
+	if (size <= dst_len)
+		return (total_len);
+	i = dst_len;
+	j = 0;
+	while (src[j] != '\0' && i < size - 1)
 	{
-		dest[offset] = src[i];
-		offset++;
+		dst[i] = src[j];
 		i++;
-		if (i == size - 1)
-			break ;
+		j++;
 	}
-	dest[offset] = '\0';
-	return (d_size + s_size);
+	dst[i] = '\0';
+	return (total_len);
 }
 
-/*
-int main()
-{
-	char dest[50] = "Hello, ";
-	char src[] = "World!";
-	unsigned int sizetest = 4;
-	printf("%s\n", src);
-	unsigned int result = ft_strlcat(dest, src, sizetest);
-	printf("%s\n", dest);
-	printf("%d\n", result);
-}
-*/
+//int main()
+//{
+//	char dest[50] = "Hello, ";
+//	char src[] = "World!";
+//	unsigned int sizetest = 10;
+//	printf("%s\n", src);
+//	unsigned int result = ft_strlcat(dest, src, sizetest);
+//	printf("%s\n", dest);
+//	printf("%d\n", result);
+//}

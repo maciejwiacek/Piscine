@@ -6,7 +6,7 @@
 /*   By: mwiacek <mwiacek@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 15:29:29 by mwiacek           #+#    #+#             */
-/*   Updated: 2024/01/20 17:08:57 by mwiacek          ###   ########.fr       */
+/*   Updated: 2024/05/11 21:12:17 by mwiacek          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,7 @@ char	*ft_strlowcase(char *str)
 	while (str[i] != '\0')
 	{
 		if (str[i] >= 'A' && str[i] <= 'Z')
-		{
 			str[i] = str[i] + ('a' - 'A');
-		}
 		i++;
 	}
 	return (str);
@@ -31,31 +29,22 @@ char	*ft_strlowcase(char *str)
 int	ft_isalpha(char str)
 {
 	if (str >= 'a' && str <= 'z')
-	{
 		return (1);
-	}
 	else
-	{
 		return (0);
-	}
 }
 
 int	ft_isnum(char str)
 {
 	if (str >= '0' && str <= '9')
-	{
 		return (1);
-	}
 	else
-	{
 		return (0);
-	}
 }
 
 char	*ft_strcapitalize(char *str)
 {
 	int	i;
-	int	c;
 	int	newword;
 
 	str = ft_strlowcase(str);
@@ -78,11 +67,9 @@ char	*ft_strcapitalize(char *str)
 	return (str);
 }
 
-/*
-int main()
-{
-	char str[] = "salut, comment tu vas ? 42mots quarante-deux; cinquante+et+un";
-
-	printf("%s", ft_strcapitalize(str));
-}
-*/
+//int main()
+//{
+//	char str[] = "salut, comment tu vas ? 42mots quarante-deux; cinquante+et+un";
+//
+//	printf("%s", ft_strcapitalize(str));
+//}

@@ -6,7 +6,7 @@
 /*   By: mwiacek <mwiacek@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 12:27:02 by mwiacek           #+#    #+#             */
-/*   Updated: 2024/01/29 13:17:36 by mwiacek          ###   ########.fr       */
+/*   Updated: 2024/05/11 21:19:36 by mwiacek          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	if (size == 0)
 	{
 		str = (char *)malloc(sizeof(char));
-		str = '\0';
+		*str = '\0';
 		return (str);
 	}
 	str = ft_create_str(size, strs, sep);
@@ -99,16 +99,18 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	return (str);
 }
 
-/* int main(void)
-{
-	int size = 3;
-	char *strs[3] = {"Hello", "World", "!"};
-	char *sep = ", ";
-	char *result = ft_strjoin(size, strs, sep);
-	if (result == NULL)
-		printf("Memory allocation failed.\n");
-	else {
-		printf("%s", result);
-		free(result);
-	}
-} */
+//#include <stdio.h>
+//
+//int main(void)
+//{
+//	int size = 3;
+//	char *strs[3] = {"Hello", "World", "!"};
+//	char *sep = ", ";
+//	char *result = ft_strjoin(size, strs, sep);
+//	if (result == NULL)
+//		printf("Memory allocation failed.\n");
+//	else {
+//		printf("%s", result);
+//		free(result);
+//	}
+//}

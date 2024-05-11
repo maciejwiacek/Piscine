@@ -6,12 +6,11 @@
 /*   By: mwiacek <mwiacek@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 19:49:49 by mwiacek           #+#    #+#             */
-/*   Updated: 2024/01/18 20:12:42 by mwiacek          ###   ########.fr       */
+/*   Updated: 2024/05/11 21:06:37 by mwiacek          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include <unistd.h>
 
 void	ft_ft(int *nbr)
 {
@@ -23,10 +22,7 @@ int main()
 {
 	int i;
 	i = 0;
-
-
 	ft_ft(&i);
-
 	printf("%d", i);
 }
 */

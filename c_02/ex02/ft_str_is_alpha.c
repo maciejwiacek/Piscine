@@ -6,7 +6,7 @@
 /*   By: mwiacek <mwiacek@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 14:35:33 by mwiacek           #+#    #+#             */
-/*   Updated: 2024/01/20 14:47:49 by mwiacek          ###   ########.fr       */
+/*   Updated: 2024/05/11 21:10:06 by mwiacek          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,11 @@ int	ft_str_is_alpha(char *str)
 
 	i = 0;
 	if (str[i] == '\0')
-	{
 		return (1);
-	}
 	while (str[i] != '\0')
 	{
 		if (str[i] < 'A' || (str[i] > 'Z' && str[i] < 'a') || str[i] > 'z')
-		{
 			return (0);
-		}
 		i++;
 	}
 	return (1);

@@ -6,11 +6,10 @@
 /*   By: mwiacek <mwiacek@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 17:38:34 by mwiacek           #+#    #+#             */
-/*   Updated: 2024/01/18 17:40:02 by mwiacek          ###   ########.fr       */
+/*   Updated: 2024/05/11 21:05:00 by mwiacek          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include <unistd.h>
 
 void	ft_putchar(char c)
@@ -37,7 +36,7 @@ void	ft_print_numbers(int x)
 	}
 }
 
-int	ft_print_comb2(void)
+void	ft_print_comb2(void)
 {
 	int	a;
 	int	b;
@@ -62,8 +61,6 @@ int	ft_print_comb2(void)
 	}
 }
 
-/*
-int main(void) {
-	ft_print_comb2();
-}
-*/
+//int main(void) {
+//	ft_print_comb2();
+//}
